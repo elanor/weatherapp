@@ -1,10 +1,4 @@
-.app-home {
-  padding: 16px;
-  background: transparent
-}
-
-button {
-  /* background: #5851ff; */
+.my-button {
   background-color: transparent;
   color: black;
   margin: 8px;
@@ -19,19 +13,4 @@ button {
   letter-spacing: .04em;
   transition: all .15s ease;
   cursor: pointer;
-}
-
-button:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
-  transform: translateY(1px);
-}
-
-/* p1 {
-  display: none;
-} */
-
-
-
-p {
-  padding-left: 8px;
 }

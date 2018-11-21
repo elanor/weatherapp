@@ -1,4 +1,4 @@
-import { Component, Method, Element } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 
 @Component({
@@ -8,27 +8,23 @@ import { Component, Method, Element } from '@stencil/core';
 })
 export class AppRoot {
 
-@Element() profileEl: HTMLElement;
-
-@Method()
-open(){
-  this.profileEl.style.display = 'block'
-}
-
   render() {
     return (
       <div>
         <header>
-          <h1>Stencil App Starter loffl</h1>
+          <h1>Weather Today</h1>
         </header>
 
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url='/' component='app-home' exact={true} />
+
+              <stencil-route component='app-home' exact={true} />
               <stencil-route url='/profile/:name' component='app-profile' />
             </stencil-route-switch>
           </stencil-router>
+
+
         </main>
       </div>
     );

@@ -1,10 +1,10 @@
 {
-  "name": "Stencil Starter",
-  "short_name": "Stencil",
+  "name": "Weather App",
+  "short_name": "WeatherApp",
   "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "assets/icon/icon.png",
+    "src": "assets/icon/umbrella.png",
     "sizes": "512x512",
     "type": "image/png"
   }],

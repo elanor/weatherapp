@@ -7,11 +7,7 @@
 
 import '@stencil/core';
 
-import '@stencil/router';
-import '@stencil/state-tunnel';
-import {
-  MatchResults,
-} from '@stencil/router';
+
 
 
 export namespace Components {
@@ -19,22 +15,29 @@ export namespace Components {
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
-  interface AppProfile {
-    'match': MatchResults;
-  }
-  interface AppProfileAttributes extends StencilHTMLAttributes {
-    'match'?: MatchResults;
-  }
+  interface AppProfile {}
+  interface AppProfileAttributes extends StencilHTMLAttributes {}
 
-  interface AppRoot {
-    'open': () => void;
-  }
+  interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
-  interface MyModal {
-    'open': () => void;
+  interface WeatherForecast {
+    'data': any;
   }
-  interface MyModalAttributes extends StencilHTMLAttributes {}
+  interface WeatherForecastAttributes extends StencilHTMLAttributes {
+    'data'?: any;
+  }
+
+  interface SelectedButton {
+    'active': boolean;
+    'onClick': any;
+    'url': string;
+  }
+  interface SelectedButtonAttributes extends StencilHTMLAttributes {
+    'active'?: boolean;
+    'onClick'?: any;
+    'url'?: string;
+  }
 }
 
 declare global {
@@ -42,14 +45,16 @@ declare global {
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
-    'MyModal': Components.MyModal;
+    'WeatherForecast': Components.WeatherForecast;
+    'SelectedButton': Components.SelectedButton;
   }
 
   interface StencilIntrinsicElements {
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
-    'my-modal': Components.MyModalAttributes;
+    'weather-forecast': Components.WeatherForecastAttributes;
+    'selected-button': Components.SelectedButtonAttributes;
   }
 
 
@@ -71,24 +76,32 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
-  interface HTMLMyModalElement extends Components.MyModal, HTMLStencilElement {}
-  var HTMLMyModalElement: {
-    prototype: HTMLMyModalElement;
-    new (): HTMLMyModalElement;
+  interface HTMLWeatherForecastElement extends Components.WeatherForecast, HTMLStencilElement {}
+  var HTMLWeatherForecastElement: {
+    prototype: HTMLWeatherForecastElement;
+    new (): HTMLWeatherForecastElement;
+  };
+
+  interface HTMLSelectedButtonElement extends Components.SelectedButton, HTMLStencilElement {}
+  var HTMLSelectedButtonElement: {
+    prototype: HTMLSelectedButtonElement;
+    new (): HTMLSelectedButtonElement;
   };
 
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
-    'my-modal': HTMLMyModalElement
+    'weather-forecast': HTMLWeatherForecastElement
+    'selected-button': HTMLSelectedButtonElement
   }
 
   interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
-    'my-modal': HTMLMyModalElement;
+    'weather-forecast': HTMLWeatherForecastElement;
+    'selected-button': HTMLSelectedButtonElement;
   }
 
 
