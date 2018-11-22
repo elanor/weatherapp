@@ -1,6 +1,5 @@
 import { Component, Prop } from '@stencil/core';
 
-
 @Component({
   tag: 'selected-button',
   styleUrl: 'selected-button.css',
@@ -14,8 +13,10 @@ export class SelectedButton {
 
   render() {
     return (
+
       <button class='my-button' onClick={this.onClick}>
-        {this.active ? 'Selected ->' : ''}<slot/>
+        {this.active ? 'Selected ->' : ''}
+        <slot/>
       </button>
     );
   }

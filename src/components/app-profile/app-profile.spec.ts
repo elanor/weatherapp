@@ -18,17 +18,7 @@ describe('app-profile', () => {
 
     it('capitalizes the first letter', () => {
       const component = new AppProfile();
-      expect(component.normalize('quincy')).toEqual('Quincy');
-    });
-
-    it('lower-cases the following letters', () => {
-      const component = new AppProfile();
-      expect(component.normalize('JOSEPH')).toEqual('Joseph');
-    });
-
-    it('handles single letter names', () => {
-      const component = new AppProfile();
-      expect(component.normalize('q')).toEqual('Q');
+      expect(component.normalize('lappeenranta')).toEqual('Lappeenranta');
     });
   });
 });

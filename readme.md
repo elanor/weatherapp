@@ -2,6 +2,8 @@
 
 This is weather web application using https://openweathermap.org API. It has no full search for cities, offering a choice of 3 cities instead: Lappeenranta, Helsinki and Sevilla. Folder "Components" consists of Root, which leads to a Home page with an opening button in it, which leads to Profile page with options to choose. Profile is connected with two other components: Forecast and Selected-Button.
 
+Opens at http://localhost:3333/
+
 ## Getting Started
 
 To start a new project using Stencil, clone this repo to a new directory:
@@ -29,10 +31,4 @@ To run the unit tests once, run:
 
 ```
 npm test
-```
-
-To run the unit tests and watch for file changes during development, run:
-
-```
-npm run test.watch
 ```

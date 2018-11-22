@@ -1,14 +1,12 @@
 .app-profile {
 
-  position: fixed;
-  top: 15%;
-  left: 24px;
-  z-index: 1000;
-  /* left: calc(50% - 175px); */
+  margin-top: 5%;
+  margin-left: 24px;
+  margin-right: 24px;
+  width: 700px;
 }
 
 button {
-  /* background: #5851ff; */
   background-color: transparent;
   color: black;
   margin: 8px;
@@ -34,4 +32,17 @@ weather-forecast {
   width: 350px;
   font-size: 20px;
   margin-left: 8px;
+
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 21px;
+}
+
+hr {
+  margin-top: 16px;
 }

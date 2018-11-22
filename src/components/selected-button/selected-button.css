@@ -13,4 +13,15 @@
   letter-spacing: .04em;
   transition: all .15s ease;
   cursor: pointer;
+
+}
+
+.my-button:hover {
+    background-color: #5a6abf;
+    color: white;
+  }
+
+.my-button:focus {
+    background-color: #5a6abf;
+    color: white;
 }

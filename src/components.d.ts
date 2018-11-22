@@ -12,9 +12,6 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface AppHome {}
-  interface AppHomeAttributes extends StencilHTMLAttributes {}
-
   interface AppProfile {}
   interface AppProfileAttributes extends StencilHTMLAttributes {}
 
@@ -23,9 +20,13 @@ export namespace Components {
 
   interface WeatherForecast {
     'data': any;
+    'description': any;
+    'temp': any;
   }
   interface WeatherForecastAttributes extends StencilHTMLAttributes {
     'data'?: any;
+    'description'?: any;
+    'temp'?: any;
   }
 
   interface SelectedButton {
@@ -42,7 +43,6 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
     'WeatherForecast': Components.WeatherForecast;
@@ -50,19 +50,12 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
-    'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
     'weather-forecast': Components.WeatherForecastAttributes;
     'selected-button': Components.SelectedButtonAttributes;
   }
 
-
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
 
   interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
   var HTMLAppProfileElement: {
@@ -89,7 +82,6 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
     'weather-forecast': HTMLWeatherForecastElement
@@ -97,7 +89,6 @@ declare global {
   }
 
   interface ElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'weather-forecast': HTMLWeatherForecastElement;

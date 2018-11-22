@@ -9,6 +9,18 @@ export class Forecast {
 
   @Prop() data: any;
 
+  @Prop() temp; pressure; speed: number;
+  @Prop() description; weather; name; humidity; main: string;
+
+  CelsiusBackToKelvin(deg: number): number {
+    return deg + 273;
+  }
+
+  HPascalToMmhg(deg: number): string {
+    var x = deg/1.333;
+    return x.toFixed(2);
+  }
+
   render() {
     if(!this.data) {
       return 'Unknown weather';
@@ -16,14 +28,14 @@ export class Forecast {
       return (
       <div>
 
-        <p>Temperature for {this.data.name}, {this.data.sys.country}:</p>
-        <p>{this.data.dt}</p>
-        <p>Sunrise at {this.data.sys.sunrise}, sunset at {this.data.sys.sunset}</p>
-        <p>temperature: {this.data.main.temp} degrees Celsium</p>
-        <p>pressure: {this.data.}
-        <p>Sky: {this.data.weather.main} {this.data.clouds} day</p>
-        <p>wind: {this.data.wind.speed}m/sec</p>
-        <p>precipitation: {this.data.rain}</p>
+      <script>
+      </script>
+
+        <p>Temperature: {this.data.main.temp} degrees Celsius</p>
+        <p>Atmospheric pressure: {this.HPascalToMmhg(this.data.main.pressure)} mmhg</p>
+        <p>Humidity: {this.data.main.humidity}%</p>
+        <p>{this.data.weather[0].description}</p>
+        <p>Wind: {this.data.wind.speed}m/sec</p>
       </div>
     );
   }

@@ -14,19 +14,10 @@ export class AppRoot {
         <header>
           <h1>Weather Today</h1>
         </header>
-
-        <main>
-          <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-
-              <stencil-route component='app-home' exact={true} />
-              <stencil-route url='/profile/:name' component='app-profile' />
-            </stencil-route-switch>
-          </stencil-router>
-
-
-        </main>
+        <app-profile/>
       </div>
+
+
     );
   }
 }

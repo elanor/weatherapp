@@ -1,8 +1,7 @@
-import { kelvinToCelsius } from './temperature-converter';
+import { CelsiusBackToKelvin } from './forecast';
 
-describe('temperature conv', () => {
-  it('Should conver degrees', () => {
-    const value = kelvinToCelsius(269);
-    expect(value).toEqual(-4);
-  })
-})
+describe('CelsiusBackToKelvin', () => {
+  it('Should convert degrees', () => {
+    const value = CelsiusBackToKelvin();
+    expect(13).toEqual(286););
+  });

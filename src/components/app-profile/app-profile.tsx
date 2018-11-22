@@ -1,4 +1,4 @@
-import { Component, Watch, State } from '@stencil/core';
+import { Component, Watch, State} from '@stencil/core';
 
 
 @Component({
@@ -10,7 +10,7 @@ export class AppProfile {
 
   @State() city: string;
   @State() period: string;
-  @State() data: object;
+  @State() data: any;
 
   @Watch('city')
   @Watch('period')
@@ -28,10 +28,21 @@ export class AppProfile {
          .catch(err => console.log(err))
        }
 
+  normalize(name: string): string {
+    if (name) {
+      return name.substr(0, 1).toUpperCase() + name.substr(1).toLowerCase();
+    }
+      return 'the chosen city';
+    }
+
+
   render() {
 
       return (
-        <div class="app-profile">
+
+        <div id="mainpage" class="app-profile">
+
+
 
         <h1>Select a city</h1>
 
@@ -58,9 +69,19 @@ export class AppProfile {
             <selected-button active={this.period === 'forecast'} onClick={() => this.period = 'forecast'}>
               5 Days
             </selected-button>
-            <br></br>
+            <br/>
             <hr/>
-            <weather-forecast data={this.data}/>
+            <h1>Weather for {this.normalize(this.city)}</h1>
+
+            {
+            this.period === 'weather' && !this.data.list
+              ? <weather-forecast data={this.data}/>
+              : this.data && this.data.list && this.data.list.map(item => <div>
+                  <h2>{item.dt_txt}</h2>
+                  <weather-forecast data={item}/>
+                </div>)
+            }
+
         </div>
 
       );
