@@ -14,19 +14,20 @@ export class AppProfile {
 
   @Watch('city')
   @Watch('period')
+
   getForecast() {
     if(!this.city || !this.period) {
       this.data = null;
       return;
     }
 
-    fetch('http://api.openweathermap.org/data/2.5/' + this.period + '?&units=metric&q=' + this.city + '&apikey=b54aaa8becb33d41027d190bf5e5cffe')
-        .then(res => res.json())
-        .then(data => {
-            this.data = data;
-         })
-         .catch(err => console.log(err))
-       }
+  fetch('http://api.openweathermap.org/data/2.5/' + this.period + '?&units=metric&q=' + this.city + '&apikey=b54aaa8becb33d41027d190bf5e5cffe')
+      .then(res => res.json())
+      .then(data => {
+          this.data = data;
+        })
+       .catch(err => console.log(err))
+      }
 
   normalize(name: string): string {
     if (name) {
@@ -70,6 +71,8 @@ export class AppProfile {
               5 Days
             </selected-button>
             <br/>
+
+
             <hr/>
             <h1>Weather for {this.normalize(this.city)}</h1>
 

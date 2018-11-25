@@ -20,13 +20,25 @@ export namespace Components {
 
   interface WeatherForecast {
     'data': any;
-    'description': any;
-    'temp': any;
+    'description': string;
+    'humidity': number;
+    'main': any;
+    'name': string;
+    'pressure': number;
+    'speed': number;
+    'temp': number;
+    'weather': string;
   }
   interface WeatherForecastAttributes extends StencilHTMLAttributes {
     'data'?: any;
-    'description'?: any;
-    'temp'?: any;
+    'description'?: string;
+    'humidity'?: number;
+    'main'?: any;
+    'name'?: string;
+    'pressure'?: number;
+    'speed'?: number;
+    'temp'?: number;
+    'weather'?: string;
   }
 
   interface SelectedButton {

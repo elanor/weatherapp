@@ -6,14 +6,14 @@ describe('app-profile', () => {
   });
 
   describe('normalization', () => {
-    it('returns a blank string if the name is undefined', () => {
+    it('returns "the chosen city" if the name is undefined', () => {
       const component = new AppProfile();
-      expect(component.normalize(undefined)).toEqual('');
+      expect(component.normalize(undefined)).toEqual('the chosen city');
     });
 
-    it('returns a blank string if the name is null', () => {
+    it('returns "the chosen city" if the name is null', () => {
       const component = new AppProfile();
-      expect(component.normalize(null)).toEqual('');
+      expect(component.normalize(null)).toEqual('the chosen city');
     });
 
     it('capitalizes the first letter', () => {

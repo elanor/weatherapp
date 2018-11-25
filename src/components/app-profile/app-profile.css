@@ -21,6 +21,7 @@ button {
   letter-spacing: .04em;
   transition: all .15s ease;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 button:hover {

@@ -5,12 +5,18 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'forecast.css',
   shadow: true,
 })
+
 export class Forecast {
 
   @Prop() data: any;
-
-  @Prop() temp; pressure; speed: number;
-  @Prop() description; weather; name; humidity; main: string;
+  @Prop() description: string;
+  @Prop() pressure: number;
+  @Prop() speed: number;
+  @Prop() temp: number;
+  @Prop() weather: string;
+  @Prop() name: string;
+  @Prop() humidity: number;
+  @Prop() main: any;
 
   CelsiusBackToKelvin(deg: number): number {
     return deg + 273;
@@ -18,8 +24,9 @@ export class Forecast {
 
   HPascalToMmhg(deg: number): string {
     var x = deg/1.333;
-    return x.toFixed(2);
+    return x.toFixed(1);
   }
+
 
   render() {
     if(!this.data) {

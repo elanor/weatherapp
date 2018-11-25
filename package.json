@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"
   },
-  "homepage": "https://github.com/ionic-team/stencil"
+  "homepage": "https://github.com/ionic-team/stencil",
+  "devDependencies": {
+    "@types/jest": "23.3.9",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0"
+  }
 }
